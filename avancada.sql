@@ -303,3 +303,22 @@ DELIMITER ;
 
 
 SELECT verificar_estoque(3, 5);
+
+-- Tabelas para gerenciamento de clientes e pedidos
+CREATE TABLE geekstore.cliente (id INT(100) NOT NULL AUTO_INCREMENT , nome VARCHAR(100) NOT NULL , email VARCHAR(100) NOT NULL , senha VARCHAR(100) NOT NULL , PRIMARY KEY (id)) ENGINE = InnoDB;
+
+CREATE TABLE `geekstore`.`pedido` (`id` INT NOT NULL AUTO_INCREMENT , `cliente_id` INT NOT NULL , `data` DATETIME NOT NULL , `preference_id` INT NOT NULL , PRIMARY KEY (`id`), INDEX (`cliente_id`)) ENGINE = InnoDB;
+
+
+-- ajustando tipo de dado da coluna preference_id
+ALTER TABLE `pedido` CHANGE `preference_id` `preference_id` INT(50) NOT NULL;
+
+-- Adicionando chave estrangeira para relacionar pedidos a clientes
+ALTER TABLE `pedido` ADD FOREIGN KEY (`cliente_id`) REFERENCES `cliente`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+-- Tabela para itens do pedido
+CREATE TABLE `geekstore`.`item` (`pedido_id` INT NOT NULL , `produto_id` INT NOT NULL , `qtde` INT NOT NULL , `valor` DOUBLE NOT NULL , PRIMARY KEY (`pedido_id`, `produto_id`)) ENGINE = InnoDB;
+
+
+---- Adicionando chaves estrangeiras para relacionar itens a pedidos e produtos
+ALTER TABLE `item` ADD FOREIGN KEY (`pedido_id`) REFERENCES `pedido`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT; ALTER TABLE `item` ADD FOREIGN KEY (`produto_id`) REFERENCES `produto`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
