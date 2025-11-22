@@ -91,6 +91,9 @@ session_start();
                             <a class="nav-link" href="index">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="dashboard">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="categoria">Categorias</a>
                         </li>
                         <li class="nav-item">
