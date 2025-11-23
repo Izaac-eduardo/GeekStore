@@ -56,6 +56,7 @@ CREATE TABLE `produto` (
   `descricao` text NOT NULL,
   `imagem` varchar(100) NOT NULL,
   `valor` double NOT NULL,
+  `estoque` int(11) NOT NULL DEFAULT 0,
   `destaque` enum('S','N') NOT NULL,
   `ativo` enum('S','N') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

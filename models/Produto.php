@@ -20,32 +20,32 @@ return $consulta->fetch(PDO::FETCH_OBJ);
         return $consulta->fetchAll(PDO::FETCH_OBJ);
     }
     public function salvar($dados) {
-$estoqueVal = $dados["estoque"] ?? 0;
+$estoque = $dados["estoque"] ?? 0;
 if(empty($dados["id"])) {
-$sql = "insert into produto (nome, categoria_id, descricao, valor, destaque, ativo, imagem, estoque) values
-(:nome, :categoria_id, :descricao, :valor, :destaque, :ativo, :imagem, :estoque)";
+$sql = "insert into produto (nome, categoria_id, descricao, valor, estoque, destaque, ativo, imagem) values
+(:nome, :categoria_id, :descricao, :valor, :estoque, :destaque, :ativo, :imagem)";
 $consulta = $this->pdo->prepare($sql);
 $consulta->bindValue(":nome", $dados["nome"]);
 $consulta->bindValue(":categoria_id", $dados["categoria_id"]);
 $consulta->bindValue(":descricao", $dados["descricao"]);
 $consulta->bindValue(":valor", $dados["valor"]);
+$consulta->bindValue(":estoque", $estoque, PDO::PARAM_INT);
 $consulta->bindValue(":destaque", $dados["destaque"]);
 $consulta->bindValue(":ativo", $dados["ativo"]);
 $consulta->bindValue(":imagem", $dados["imagem"]);
-    $consulta->bindValue(":estoque", $estoqueVal);
 
     } else {
-        $sql = "Update produto set nome = :nome, categoria_id = :categoria_id, descricao = :descricao, valor = :valor, destaque = :destaque, ativo = :ativo, imagem = :imagem, estoque = :estoque
+        $sql = "Update produto set nome = :nome, categoria_id = :categoria_id, descricao = :descricao, valor = :valor, estoque = :estoque, destaque = :destaque, ativo = :ativo, imagem = :imagem
         where id = :id limit 1";
         $consulta = $this->pdo->prepare($sql);
 $consulta->bindValue(":nome", $dados["nome"]);
 $consulta->bindValue(":categoria_id", $dados["categoria_id"]);
 $consulta->bindValue(":descricao", $dados["descricao"]);
 $consulta->bindValue(":valor", $dados["valor"]);
+        $consulta->bindValue(":estoque", $estoque, PDO::PARAM_INT);
 $consulta->bindValue(":destaque", $dados["destaque"]);
 $consulta->bindValue(":ativo", $dados["ativo"]);
 $consulta->bindValue(":imagem", $dados["imagem"]);
-        $consulta->bindValue(":estoque", $estoqueVal);
 $consulta->bindValue(":id", $dados["id"]);
         
 }
@@ -57,9 +57,4 @@ public function listar() {
     $consulta->execute();
     return $consulta->fetchAll(PDO::FETCH_OBJ);
 }
-public function excluir($id) {
-    $sql = "delete from produto where id = :id limit 1";
-    $consulta = $this->pdo->prepare($sql);
-    $consulta->bindParam(":id", $id);
-    return $consulta->execute();
-}}
+}
