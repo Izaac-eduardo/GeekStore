@@ -63,11 +63,36 @@
                 $recentOrders = [];
             }
 
-            // Faturamento por mês (para gráfico)
+            // Produtos mais vendidos (top 5)
             try {
-                $faturamentoMes = $pedidoModel->faturamentoPorMes(6);
+                $sql = "SELECT p.id, p.nome, SUM(i.qtde) AS quantidade_vendida
+                        FROM produto p
+                        LEFT JOIN item i ON i.produto_id = p.id
+                        GROUP BY p.id, p.nome
+                        ORDER BY quantidade_vendida DESC
+                        LIMIT 5";
+                $consulta = $this->pdo->prepare($sql);
+                $consulta->execute();
+                $topProdutos = $consulta->fetchAll(PDO::FETCH_OBJ);
             } catch (Exception $e) {
-                $faturamentoMes = [];
+                $topProdutos = [];
+            }
+
+            // Categorias com maior número de pedidos
+            try {
+                $sql = "SELECT c.id, c.nome, COUNT(DISTINCT p.id) AS total_pedidos
+                        FROM categoria c
+                        LEFT JOIN produto pr ON pr.categoria_id = c.id
+                        LEFT JOIN item i ON i.produto_id = pr.id
+                        LEFT JOIN pedido p ON p.id = i.pedido_id
+                        GROUP BY c.id, c.nome
+                        ORDER BY total_pedidos DESC
+                        LIMIT 5";
+                $consulta = $this->pdo->prepare($sql);
+                $consulta->execute();
+                $topCategorias = $consulta->fetchAll(PDO::FETCH_OBJ);
+            } catch (Exception $e) {
+                $topCategorias = [];
             }
 
             // Produtos com estoque baixo

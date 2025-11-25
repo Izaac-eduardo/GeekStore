@@ -11,23 +11,25 @@
     }
 
     .dashboard-header {
-        padding: 2rem 0;
-        border-bottom: 2px solid var(--light-bg);
-        margin-bottom: 2rem;
+        padding: 0.4rem 0;
+        border-bottom: 1px solid var(--light-bg);
+        margin-bottom: 0.6rem;
     }
 
     .dashboard-title {
-        font-size: 2.2rem;
+        font-size: 1.2rem;
         font-weight: 700;
         color: var(--primary-color);
         letter-spacing: -0.5px;
+        margin-bottom: 0.1rem;
     }
 
     .dashboard-subtitle {
         color: #7f8c8d;
-        font-size: 0.95rem;
-        margin-top: 0.5rem;
+        font-size: 0.7rem;
+        margin-top: 0;
         font-weight: 400;
+        display: none;
     }
 
     .stat-card {
@@ -56,27 +58,27 @@
     }
 
     .stat-card .card-body {
-        padding: 1.75rem;
+        padding: 0.6rem;
     }
 
     .stat-card .icon {
-        font-size: 2rem;
+        font-size: 1.1rem;
         color: var(--primary-color);
-        margin-bottom: 1rem;
+        margin-bottom: 0.2rem;
         opacity: 0.8;
     }
 
     .stat-card .card-title {
         color: #7f8c8d;
-        font-size: 0.9rem;
+        font-size: 0.6rem;
         font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin-bottom: 0.75rem;
+        letter-spacing: 0.3px;
+        margin-bottom: 0.15rem;
     }
 
     .stat-number {
-        font-size: 2rem;
+        font-size: 1.2rem;
         font-weight: 700;
         color: var(--primary-color);
         margin: 0;
@@ -93,36 +95,38 @@
 
     .card {
         border: none;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        border-radius: 5px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         background: white;
         transition: all 0.3s ease;
+        margin-bottom: 0.5rem;
     }
 
     .card:hover {
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
     }
 
     .card-header {
         background: #f8f9fa;
         border: none;
-        padding: 1.25rem;
+        padding: 0.5rem 0.7rem;
         border-bottom: 1px solid #e9ecef;
     }
 
     .card-header h5 {
         color: var(--primary-color);
         font-weight: 600;
-        font-size: 1.05rem;
+        font-size: 0.75rem;
         margin: 0;
     }
 
     .card-header i {
         color: var(--accent-color);
+        margin-right: 0.3rem;
     }
 
     .card-body {
-        padding: 1.5rem;
+        padding: 0.6rem;
     }
 
     .table th {
@@ -130,18 +134,19 @@
         font-weight: 600;
         border: none;
         background: #f8f9fa;
-        padding: 1rem;
+        padding: 0.35rem 0.4rem;
         text-transform: uppercase;
-        font-size: 0.85rem;
-        letter-spacing: 0.5px;
+        font-size: 0.65rem;
+        letter-spacing: 0.2px;
     }
 
     .table td {
         vertical-align: middle;
         color: #2c3e50;
-        padding: 0.875rem 1rem;
+        padding: 0.35rem 0.4rem;
         border: none;
         border-bottom: 1px solid #e9ecef;
+        font-size: 0.75rem;
     }
 
     .table tbody tr:hover {
@@ -149,10 +154,10 @@
     }
 
     .badge-custom {
-        padding: 0.4rem 0.7rem;
-        border-radius: 4px;
+        padding: 0.2rem 0.35rem;
+        border-radius: 3px;
         font-weight: 600;
-        font-size: 0.85rem;
+        font-size: 0.65rem;
     }
 
     .bg-success-light { background: #d5f4e6; color: #27ae60; }
@@ -163,8 +168,9 @@
     .list-group-item {
         border: none;
         border-bottom: 1px solid #e9ecef;
-        padding: 1rem 1.5rem;
+        padding: 0.4rem 0.7rem;
         background: white;
+        font-size: 0.75rem;
     }
 
     .list-group-item:last-child {
@@ -173,43 +179,50 @@
 
     .list-group-item strong {
         color: var(--primary-color);
+        font-size: 0.75rem;
     }
 
     .list-group-item .text-muted {
         color: #95a5a6;
+        font-size: 0.65rem;
     }
 
     .alert-empty {
         background: #f8f9fa;
         border: 1px solid #e9ecef;
         color: #7f8c8d;
-        border-radius: 8px;
-        padding: 2rem;
+        border-radius: 5px;
+        padding: 0.6rem;
         text-align: center;
     }
 
-
     .alert-empty i {
-        font-size: 2rem;
+        font-size: 0.9rem;
         color: #bdc3c7;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.2rem;
+        display: none;
+    }
+
+    .alert-empty p {
+        margin: 0;
+        font-size: 0.65rem;
     }
 </style>
 
 <link rel="stylesheet" href="css/dashboard.css">
 
-<div class="container-fluid">
+<div class="container-fluid" style="padding: 0.4rem;">
     <div class="dashboard-header">
-        <div class="row">
+        <div class="row g-0">
             <div class="col-12">
                 <h1 class="dashboard-title">Dashboard</h1>
-                <p class="dashboard-subtitle">Visão geral do seu negócio e métricas principais</p>
+                <p class="dashboard-subtitle">Visão geral</p>
             </div>
         </div>
     </div>
 
-    <div class="row mb-4">
-        <div class="col-lg-3 col-md-6 mb-4">
+    <div class="row g-2 mb-2">
+        <div class="col-lg-3 col-md-6 col-6">
             <div class="card stat-card stat-card-blue">
                 <div class="card-body">
                     <div class="icon"><i class="fas fa-box"></i></div>
@@ -218,7 +231,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6 mb-4">
+        <div class="col-lg-3 col-md-6 col-6">
             <div class="card stat-card stat-card-green">
                 <div class="card-body">
                     <div class="icon"><i class="fas fa-layer-group"></i></div>
@@ -227,7 +240,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6 mb-4">
+        <div class="col-lg-3 col-md-6 col-6">
             <div class="card stat-card stat-card-orange">
                 <div class="card-body">
                     <div class="icon"><i class="fas fa-users"></i></div>
@@ -236,7 +249,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6 mb-4">
+        <div class="col-lg-3 col-md-6 col-6">
             <div class="card stat-card stat-card-purple">
                 <div class="card-body">
                     <div class="icon"><i class="fas fa-shopping-bag"></i></div>
@@ -247,35 +260,34 @@
         </div>
     </div>
 
-    <div class="row mb-4">
-        <div class="col-lg-4 mb-4">
+    <div class="row g-2 mb-2">
+        <div class="col-lg-4">
             <div class="card h-100">
                 <div class="card-header">
-                    <h5><i class="fas fa-dollar-sign"></i> Faturamento Total</h5>
+                    <h5><i class="fas fa-dollar-sign"></i> Faturamento</h5>
                 </div>
                 <div class="card-body">
-                    <div class="faturamento-total">
+                    <div style="font-size: 1.1rem; font-weight: 700; color: #27ae60; margin-bottom: 0.2rem;">
                         R$ <?php echo number_format(floatval($totalFaturamento ?? 0), 2, ',', '.'); ?>
                     </div>
-                    <p class="faturamento-label">Valor total de vendas</p>
+                    <p style="color: #95a5a6; margin: 0; font-size: 0.65rem;">Total vendido</p>
                 </div>
             </div>
         </div>
-        <div class="col-lg-8 mb-4">
+        <div class="col-lg-8">
             <div class="card h-100">
                 <div class="card-header">
                     <h5><i class="fas fa-receipt"></i> Pedidos Recentes</h5>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-sm">
+                    <div class="table-responsive" style="max-height: 180px; overflow-y: auto;">
+                        <table class="table table-sm mb-0">
                             <thead>
                                 <tr>
-                                    <th class="table-width-pedido">Pedido</th>
+                                    <th style="width: 50px;">Ped.</th>
                                     <th>Cliente</th>
-                                    <th class="text-end table-width-total">Total</th>
-                                    <th class="text-end table-width-data">Data</th>
-                                    <th class="text-center table-width-status">Status</th>
+                                    <th class="text-end" style="width: 100px;">Total</th>
+                                    <th class="text-center" style="width: 70px;">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -289,10 +301,9 @@
                                 ?>
                                     <tr>
                                         <td><strong>#<?php echo $r->id; ?></strong></td>
-                                        <td><?php echo htmlspecialchars($cliente); ?></td>
-                                        <td class="text-end"><strong>R$ <?php echo $total; ?></strong></td>
-                                        <td class="text-end"><small><?php echo $data; ?></small></td>
-                                        <td class="text-center"><span class="badge-custom <?php echo $status_class; ?>"><?php echo $status; ?></span></td>
+                                        <td><?php echo htmlspecialchars(substr($cliente, 0, 12)); ?></td>
+                                        <td class="text-end"><strong style="font-size: 0.7rem;">R$ <?php echo $total; ?></strong></td>
+                                        <td class="text-center"><span class="badge-custom <?php echo $status_class; ?>"><?php echo substr($status, 0, 3); ?></span></td>
                                     </tr>
                                 <?php }
                                 } else { ?>
@@ -313,39 +324,48 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-lg-8 mb-4">
+    <div class="row g-2 mb-2">
+        <div class="col-lg-6">
             <div class="card h-100">
                 <div class="card-header">
-                    <h5><i class="fas fa-chart-line"></i> Faturamento (últimos meses)</h5>
+                    <h5><i class="fas fa-star"></i> Top Produtos</h5>
                 </div>
                 <div class="card-body">
-                    <canvas id="chartFaturamento" height="80"></canvas>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 mb-4">
-            <div class="card h-100">
-                <div class="card-header">
-                    <h5><i class="fas fa-warehouse"></i> Estoque Baixo</h5>
-                </div>
-                <div class="card-body">
-                    <?php if(!empty($lowStock)) { ?>
-                        <ul class="list-group list-group-flush">
-                            <?php foreach($lowStock as $p) { ?>
+                    <?php if(!empty($topProdutos)) { ?>
+                        <ul class="list-group list-group-flush" style="max-height: 150px; overflow-y: auto;">
+                            <?php foreach($topProdutos as $p) { ?>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <strong><?php echo htmlspecialchars($p->nome); ?></strong><br>
-                                        <small class="text-muted">ID: #<?php echo $p->id; ?></small>
-                                    </div>
-                                    <span class="badge-custom bg-danger-light"><?php echo intval($p->estoque); ?> un.</span>
+                                    <div><strong><?php echo htmlspecialchars(substr($p->nome, 0, 18)); ?></strong></div>
+                                    <span class="badge-custom bg-success-light"><?php echo intval($p->quantidade_vendida); ?></span>
                                 </li>
                             <?php } ?>
                         </ul>
                     <?php } else { ?>
                         <div class="alert-empty">
-                            <i class="fas fa-check-circle success-icon"></i>
-                            <p>Todos os produtos com estoque adequado</p>
+                            <p>Sem vendas</p>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h5><i class="fas fa-layer-group"></i> Top Categorias</h5>
+                </div>
+                <div class="card-body">
+                    <?php if(!empty($topCategorias)) { ?>
+                        <ul class="list-group list-group-flush" style="max-height: 150px; overflow-y: auto;">
+                            <?php foreach($topCategorias as $c) { ?>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div><strong><?php echo htmlspecialchars(substr($c->nome, 0, 18)); ?></strong></div>
+                                    <span class="badge-custom bg-info-light"><?php echo intval($c->total_pedidos); ?></span>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    <?php } else { ?>
+                        <div class="alert-empty">
+                            <p>Sem pedidos</p>
                         </div>
                     <?php } ?>
                 </div>
@@ -353,88 +373,30 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        (function(){
-            const raw = <?php echo json_encode($faturamentoMes ?? []); ?>;
-            const labels = [];
-            const data = [];
-            if(raw.length > 0) {
-                raw.forEach(r => {
-                    const parts = r.ym.split('-');
-                    const year = parts[0];
-                    const month = parts[1];
-                    labels.push(month + '/' + year);
-                    data.push(parseFloat(r.total));
-                });
-            }
-
-            const ctx = document.getElementById('chartFaturamento').getContext('2d');
-            new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Faturamento (R$)',
-                        data: data,
-                        borderColor: '#2c3e50',
-                        backgroundColor: 'rgba(44, 62, 80, 0.08)',
-                        borderWidth: 2.5,
-                        tension: 0.4,
-                        fill: true,
-                        pointBackgroundColor: '#3498db',
-                        pointBorderColor: '#fff',
-                        pointBorderWidth: 2,
-                        pointRadius: 4,
-                        pointHoverRadius: 6
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true,
-                    scales: {
-                        y: { 
-                            beginAtZero: true,
-                            ticks: {
-                                callback: function(value) {
-                                    return 'R$ ' + value.toLocaleString('pt-BR', {maximumFractionDigits: 0});
-                                },
-                                color: '#7f8c8d',
-                                font: { size: 11, weight: 500 }
-                            },
-                            grid: {
-                                color: 'rgba(0, 0, 0, 0.05)',
-                                drawBorder: false
-                            }
-                        },
-                        x: {
-                            grid: {
-                                display: false,
-                                drawBorder: false
-                            },
-                            ticks: {
-                                color: '#7f8c8d',
-                                font: { size: 11, weight: 500 }
-                            }
-                        }
-                    },
-                    plugins: {
-                        legend: { 
-                            display: true,
-                            labels: {
-                                font: { size: 12, weight: 600 },
-                                color: '#2c3e50',
-                                boxWidth: 12,
-                                padding: 15
-                            }
-                        },
-                        filler: {
-                            propagate: true
-                        }
-                    }
-                }
-            });
-        })();
-    </script>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h5><i class="fas fa-warehouse"></i> Estoque Baixo</h5>
+                </div>
+                <div class="card-body">
+                    <?php if(!empty($lowStock)) { ?>
+                        <ul class="list-group list-group-flush" style="max-height: 150px; overflow-y: auto;">
+                            <?php foreach($lowStock as $p) { ?>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div><strong><?php echo htmlspecialchars(substr($p->nome, 0, 25)); ?></strong></div>
+                                    <span class="badge-custom bg-danger-light"><?php echo intval($p->estoque); ?></span>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    <?php } else { ?>
+                        <div class="alert-empty">
+                            <p>Estoque OK</p>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>

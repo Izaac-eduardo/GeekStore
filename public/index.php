@@ -8,6 +8,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel de controle Geek Store</title>
     <base href="http://<?= $_SERVER['SERVER_NAME'] . $_SERVER['SCRIPT_NAME'] ?>">
+    <link rel="shortcut icon" href="images/geeklogo.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" htef="css/sweetalert2.min.css">
