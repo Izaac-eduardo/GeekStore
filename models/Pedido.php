@@ -37,6 +37,37 @@ class Pedido {
         return $consulta->fetch(PDO::FETCH_OBJ)->total ?? 0;
     }
 
-   
+    // Produtos mais vendidos (top N)
+    public function topProdutos($limit = 5) {
+        $sql = "SELECT p.id, p.nome, SUM(i.qtde) AS quantidade_vendida
+                FROM produto p
+                LEFT JOIN item i ON i.produto_id = p.id
+                GROUP BY p.id, p.nome
+                ORDER BY quantidade_vendida DESC
+                LIMIT :limit";
+        $consulta = $this->pdo->prepare($sql);
+        $consulta->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
+        $consulta->execute();
+        return $consulta->fetchAll(PDO::FETCH_OBJ);
     }
+
+    // Categorias com melhor desempenho (mais pedidos)
+    public function topCategorias($limit = 5) {
+        $sql = "SELECT c.id, c.descricao AS nome, COUNT(DISTINCT p.id) AS total_pedidos, SUM(i.qtde) AS quantidade_vendida
+                FROM categoria c
+                LEFT JOIN produto pr ON pr.categoria_id = c.id
+                LEFT JOIN item i ON i.produto_id = pr.id
+                LEFT JOIN pedido p ON p.id = i.pedido_id
+                WHERE p.id IS NOT NULL
+                GROUP BY c.id, c.descricao
+                ORDER BY total_pedidos DESC
+                LIMIT :limit";
+        $consulta = $this->pdo->prepare($sql);
+        $consulta->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
+        $consulta->execute();
+        return $consulta->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    }
+
 

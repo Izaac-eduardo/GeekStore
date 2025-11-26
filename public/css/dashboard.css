@@ -288,3 +288,50 @@
     color: #bdc3c7;
     margin-bottom: 0.5rem;
 }
+
+.dashboard-container {
+    padding: 0.4rem;
+}
+
+.faturamento-valor {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #27ae60;
+    margin-bottom: 0.2rem;
+}
+
+.faturamento-texto {
+    color: #95a5a6;
+    margin: 0;
+    font-size: 0.65rem;
+}
+
+.table-responsive-scroll {
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+.list-scroll {
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.table-sm-custom {
+    margin-bottom: 0;
+}
+
+.table-col-pedido {
+    width: 50px;
+}
+
+.table-col-total {
+    width: 100px;
+}
+
+.table-col-status {
+    width: 70px;
+}
+
+.table-total-strong {
+    font-size: 0.7rem;
+}
