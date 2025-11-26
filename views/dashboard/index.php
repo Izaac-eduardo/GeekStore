@@ -2,12 +2,7 @@
 
 <div class="container-fluid dashboard-container">
     <div class="dashboard-header">
-        <div class="row g-0">
-            <div class="col-12">
-                <h1 class="dashboard-title">Dashboard</h1>
-                <p class="dashboard-subtitle">Visão geral</p>
-            </div>
-        </div>
+        
     </div>
 
     <div class="row g-2 mb-2">
@@ -15,7 +10,7 @@
             <div class="card stat-card stat-card-blue">
                 <div class="card-body">
                     <div class="icon"><i class="fas fa-box"></i></div>
-                    <h6 class="card-title">Produtos</h6>
+                    <h6 class="card-title">PRODUTOS</h6>
                     <p class="stat-number"><?php echo intval($totalProdutos); ?></p>
                 </div>
             </div>
@@ -24,7 +19,7 @@
             <div class="card stat-card stat-card-green">
                 <div class="card-body">
                     <div class="icon"><i class="fas fa-layer-group"></i></div>
-                    <h6 class="card-title">Categorias</h6>
+                    <h6 class="card-title">CATEGORIAS</h6>
                     <p class="stat-number"><?php echo intval($totalCategorias); ?></p>
                 </div>
             </div>
@@ -33,7 +28,7 @@
             <div class="card stat-card stat-card-orange">
                 <div class="card-body">
                     <div class="icon"><i class="fas fa-users"></i></div>
-                    <h6 class="card-title">Usuários</h6>
+                    <h6 class="card-title">USUÁRIOS</h6>
                     <p class="stat-number"><?php echo intval($totalUsuarios); ?></p>
                 </div>
             </div>
@@ -42,7 +37,7 @@
             <div class="card stat-card stat-card-purple">
                 <div class="card-body">
                     <div class="icon"><i class="fas fa-shopping-bag"></i></div>
-                    <h6 class="card-title">Pedidos</h6>
+                    <h6 class="card-title">PEDIDOS</h6>
                     <p class="stat-number"><?php echo intval($totalPedidos ?? 0); ?></p>
                 </div>
             </div>
@@ -53,20 +48,20 @@
         <div class="col-lg-4">
             <div class="card h-100">
                 <div class="card-header">
-                    <h5><i class="fas fa-dollar-sign"></i> Faturamento</h5>
+                    <h5><i class="fas fa-dollar-sign"></i> FATURAMENTO TOTAL</h5>
                 </div>
                 <div class="card-body">
                     <div class="faturamento-valor">
                         R$ <?php echo number_format(floatval($totalFaturamento ?? 0), 2, ',', '.'); ?>
                     </div>
-                    <p class="faturamento-texto">Total vendido</p>
+                    <p class="faturamento-texto">TOTAL VENDIDO</p>
                 </div>
             </div>
         </div>
         <div class="col-lg-8">
             <div class="card h-100">
                 <div class="card-header">
-                    <h5><i class="fas fa-receipt"></i> Pedidos Recentes</h5>
+                    <h5><i class="fas fa-receipt"></i>PEDIDOS RECENTES</h5>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive table-responsive-scroll">
@@ -114,10 +109,10 @@
     </div>
 
     <div class="row g-2 mb-2">
-        <div class="col-lg-6">
+        <div class="col-lg-4">
             <div class="card h-100">
                 <div class="card-header">
-                    <h5><i class="fas fa-star"></i> Top Produtos</h5>
+                    <h5><i class="fas fa-box"></i> PRODUTOS MAIS VENDIDOS</h5>
                 </div>
                 <div class="card-body">
                     <?php if(!empty($topProdutos)) { ?>
@@ -137,10 +132,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-4">
             <div class="card h-100">
                 <div class="card-header">
-                    <h5><i class="fas fa-layer-group"></i> Top Categorias</h5>
+                    <h5><i class="fas fa-layer-group"></i> CATEGORIAS COM MAIS PEDIDOS</h5>
                 </div>
                 <div class="card-body">
                     <?php if(!empty($topCategorias)) { ?>
@@ -160,20 +155,17 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-4">
             <div class="card h-100">
                 <div class="card-header">
-                    <h5><i class="fas fa-warehouse"></i> Estoque Baixo</h5>
+                    <h5><i class="fas fa-warehouse"></i> ESTOQUE BAIXO</h5>
                 </div>
                 <div class="card-body">
                     <?php if(!empty($lowStock)) { ?>
                         <ul class="list-group list-group-flush list-scroll">
                             <?php foreach($lowStock as $p) { ?>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <div><strong><?php echo htmlspecialchars(substr($p->nome, 0, 25)); ?></strong></div>
+                                    <div><strong><?php echo htmlspecialchars(substr($p->nome, 0, 20)); ?></strong></div>
                                     <span class="badge-custom bg-danger-light"><?php echo intval($p->estoque); ?></span>
                                 </li>
                             <?php } ?>

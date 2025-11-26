@@ -11,6 +11,13 @@
     --border-color: #bdc3c7;
 }
 
+.dashboard-container {
+    padding: 0.4rem !important;
+    background: #000 !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+}
+
 .dashboard-header {
     padding: 0.4rem 0;
     border-bottom: 1px solid var(--light-bg);
@@ -291,6 +298,8 @@
 
 .dashboard-container {
     padding: 0.4rem;
+    background: #1a1a1a;
+    min-height: 100vh;
 }
 
 .faturamento-valor {

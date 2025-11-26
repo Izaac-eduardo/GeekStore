@@ -28,7 +28,7 @@ session_start();
                 campo.type = 'password';
             }
         }
-        //msg de erro
+        //msg de err
         mensagem = function(msg, url, icone) {
             Swal.fire({
                 title: msg,
