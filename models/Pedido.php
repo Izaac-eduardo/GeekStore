@@ -68,6 +68,16 @@ class Pedido {
         return $consulta->fetchAll(PDO::FETCH_OBJ);
     }
 
+    // Calcula o ticket médio (valor médio por pedido)
+    public function ticketMedio() {
+        $totalPedidos = $this->contar();
+        if ($totalPedidos == 0) {
+            return 0;
+        }
+        $totalFaturamento = $this->totalFaturamento();
+        return $totalFaturamento / $totalPedidos;
+    }
+
     }
 
 

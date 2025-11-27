@@ -13,7 +13,7 @@ public function index($id) {
 require "../views/usuario/index.php";
 }
 public function excluir($id) {
-
+require "../views/usuario/excluir.php";
 }
 public function salvar() {
 require "../views/usuario/salvar.php";

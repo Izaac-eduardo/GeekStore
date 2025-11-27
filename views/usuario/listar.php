@@ -35,8 +35,12 @@
             <td>
                 <a href="usuario/index/<?= $dados->id?> " class="btn btn-warning">
                     <i class="fas fa-edit"></i> Editar
+                </a> <a href="usuario/excluir/<?= $dados->id?> " class="btn btn-danger">
+                    <i class="fas fa-trash"></i> excluir
                 </a>
             </td>
+            
+               
         </tr>
         <?php
     }

@@ -62,4 +62,10 @@ public function salvar($dados){
             $consulta->execute();
             return $consulta->fetchAll(PDO::FETCH_OBJ);
         }
+         public function excluir ($id){
+            $sql = "delete from usuario where id = :id limit 1";
+            $consulta = $this->pdo->prepare($sql);
+            $consulta->bindParam(":id", $id);
+            return $consulta->execute();
+        }
 }
